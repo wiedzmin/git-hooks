@@ -3,3 +3,9 @@
   description: Deny pushing WIP repo state
   entry: scripts/forbid-pushing-wip
   language: script
+- id: nixfmt
+  name: nixfmt
+  description: Formatting Nix sources
+  language: script
+  entry: "scripts/nixfmt"
+  files: "\\.nix$"
