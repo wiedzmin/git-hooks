@@ -1,0 +1,5 @@
+- id: forbid-pushing-wip
+  name: forbid-pushing-wip
+  description: Deny pushing WIP repo state
+  entry: scripts/forbid-pushing-wip
+  language: script
