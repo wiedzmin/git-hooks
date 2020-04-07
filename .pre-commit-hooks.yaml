@@ -1,19 +1,19 @@
 - id: forbid-pushing-wip
-  name: forbid-pushing-wip
   description: Deny pushing WIP repo state
   entry: scripts/forbid-pushing-wip
   language: script
+  name: forbid-pushing-wip
   stages: [push]
 - id: nixfmt
-  name: nixfmt
   description: Formatting Nix sources
-  language: script
-  entry: "scripts/nixfmt"
+  entry: scripts/nixfmt
   files: "\\.nix$"
+  language: script
+  name: nixfmt
   stages: [commit]
 - id: tag-branch-commit
-  name: tag-branch-commit
   description: Prefix commit message with current branch name
+  entry: scripts/tag-branch-commit
   language: script
-  entry: "scripts/tag-branch-commit"
+  name: tag-branch-commit
   stages: [prepare-commit-msg]
