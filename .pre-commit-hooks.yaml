@@ -11,3 +11,9 @@
   entry: "scripts/nixfmt"
   files: "\\.nix$"
   stages: [commit]
+- id: tag-branch-commit
+  name: tag-branch-commit
+  description: Prefix commit message with current branch name
+  language: script
+  entry: "scripts/tag-branch-commit"
+  stages: [prepare-commit-msg]

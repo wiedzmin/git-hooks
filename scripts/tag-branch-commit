@@ -1,0 +1,6 @@
+#!/usr/bin/env bash
+
+branch_name=$(git symbolic-ref --short HEAD)
+commit_msg_file=$1
+
+sed -i.bak -e "1s/.*/$branch_name\:\n/" "$commit_msg_file"
