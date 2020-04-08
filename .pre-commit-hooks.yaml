@@ -17,3 +17,9 @@
   language: script
   name: tag-branch-commit
   stages: [prepare-commit-msg]
+- id: go-mod-prohibit-replace
+  description: Prohibit commiting `replace` entries in go.mod files
+  entry: scripts/go-mod-prohibit-replace
+  language: script
+  name: go-mod-prohibit-replace
+  stages: [commit]

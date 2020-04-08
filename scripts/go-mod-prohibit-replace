@@ -1,0 +1,7 @@
+#!/usr/bin/env bash
+
+content=$(git grep --cached -l -I "replace" -- 'go.mod')
+if [ -n "$content" ]; then
+    echo >&2 "Found 'replace' in go.mod, canceled commit"
+    exit 1
+fi
