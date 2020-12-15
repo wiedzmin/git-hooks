@@ -17,6 +17,12 @@
   language: script
   name: tag-branch-commit
   stages: [prepare-commit-msg]
+- id: unhide-devenv
+  description: Unhide transient development environment files
+  entry: scripts/unhide-devenv
+  language: script
+  name: unhide-devenv
+  stages: [post-commit]
 - id: go-mod-prohibit-replace
   description: Prohibit commiting `replace` entries in go.mod files
   entry: scripts/go-mod-prohibit-replace
