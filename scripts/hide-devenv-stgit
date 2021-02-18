@@ -1,0 +1,1 @@
+command -v stg &> /dev/null && stg pop devenv || echo 0

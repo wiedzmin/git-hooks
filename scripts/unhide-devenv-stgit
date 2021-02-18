@@ -1,0 +1,1 @@
+command -v stg &> /dev/null && stg push devenv || echo 0
