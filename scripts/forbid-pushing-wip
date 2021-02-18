@@ -1,8 +1,13 @@
-#!/usr/bin/env bash
+#!/usr/bin/env python
+import sys
+from subprocess import check_output
 
-commit=$(git log --pretty=oneline | grep -e "\[wip\]" -e "\[WIP\]")
-if [ ! -z "$commit" ]; then
-    echo $commit
-    echo >&2 "Found WIP commit(s), canceled pushing"
-    exit 1
-fi
+unpushed_commits = check_output(['git', 'log', '--pretty=oneline', '@{u}..']).decode().strip().split("\n")
+wip_commits = []
+for commit in unpushed_commits:
+    if "wip" in commit or "WIP" in commit or commit.startswith("fixup"):
+        wip_commits.append(commit)
+
+if len(wip_commits):
+    print("found work-in-progress commit(s), cannot push:\n{0}".format('\n'.join(wip_commits)))
+    sys.exit(1)
