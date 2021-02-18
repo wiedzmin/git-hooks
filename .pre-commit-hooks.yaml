@@ -4,12 +4,11 @@
   language: script
   name: forbid-pushing-wip
   stages: [push]
-- id: nixfmt
-  description: Formatting Nix sources
-  entry: scripts/nixfmt
-  files: "\\.nix$"
+- id: forbid-committing-go-mod-replace
+  description: Forbid commiting `replace` entries in go.mod files
+  entry: scripts/forbid-go-mod-replace-commit
   language: script
-  name: nixfmt
+  name: forbid-go-mod-replace-commit
   stages: [commit]
 - id: tag-branch-commit
   description: Prefix commit message with current branch name
@@ -23,10 +22,11 @@
   language: script
   name: unhide-devenv
   stages: [post-commit]
-- id: forbid-committing-go-mod-replace
-  description: Forbid commiting `replace` entries in go.mod files
-  entry: scripts/forbid-go-mod-replace-commit
+- id: nixfmt
+  description: Formatting Nix sources
+  entry: scripts/nixfmt
+  files: "\\.nix$"
   language: script
-  name: forbid-go-mod-replace-commit
+  name: nixfmt
   stages: [commit]
 # TODO: add preventing pushing FIXMEs
