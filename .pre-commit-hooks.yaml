@@ -21,13 +21,7 @@
   entry: scripts/hide-devenv-stgit
   language: script
   name: hide-devenv-stgit
-  stages: [commit]
-- id: unhide-devenv
-  description: Unhide transient development environment files
-  entry: scripts/unhide-devenv
-  language: script
-  name: unhide-devenv
-  stages: [post-commit]
+  stages: [commit, push]
 - id: unhide-devenv-stgit
   description: Unhide transient development environment files, using StGit
   entry: scripts/unhide-devenv-stgit

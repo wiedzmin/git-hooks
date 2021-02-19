@@ -1,1 +1,2 @@
-command -v stg &> /dev/null && stg push devenv || echo 0
+devenv_patch="${DEVENV_PATCH_NAME:-devenv}"
+command -v stg &> /dev/null && stg push $devenv_patch || echo 0
