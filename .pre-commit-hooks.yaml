@@ -4,6 +4,12 @@
   language: script
   name: forbid-pushing-wip
   stages: [push]
+- id: forbid-pushing-devenv
+  description: Deny pushing devenv upstream
+  entry: scripts/forbid-pushing-devenv
+  language: script
+  name: forbid-pushing-devenv
+  stages: [push]
 - id: forbid-committing-go-mod-replace
   description: Forbid commiting `replace` entries in go.mod files
   entry: scripts/forbid-go-mod-replace-commit

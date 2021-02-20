@@ -1,0 +1,13 @@
+#!/usr/bin/env python
+import sys
+from subprocess import check_output
+
+unpushed_commits = check_output(['git', 'log', '--pretty=oneline', '@{u}..']).decode().strip().split("\n")
+devenv_commits = []
+for commit in unpushed_commits:
+    if "devenv" in commit:
+        devenv_commits.append(commit)
+
+if len(devenv_commits):
+    print("found existing devenv, hide it before proceeding:\n{0}".format('\n'.join(devenv_commits)))
+    sys.exit(1)
