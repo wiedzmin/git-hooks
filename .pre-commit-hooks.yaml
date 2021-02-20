@@ -16,18 +16,6 @@
   language: script
   name: tag-branch-commit
   stages: [prepare-commit-msg]
-- id: hide-devenv-stgit
-  description: Hide transient development environment files, using StGit
-  entry: scripts/hide-devenv-stgit
-  language: script
-  name: hide-devenv-stgit
-  stages: [commit, push]
-- id: unhide-devenv-stgit
-  description: Unhide transient development environment files, using StGit
-  entry: scripts/unhide-devenv-stgit
-  language: script
-  name: unhide-devenv-stgit
-  stages: [post-commit]
 - id: nixfmt
   description: Formatting Nix sources
   entry: scripts/nixfmt

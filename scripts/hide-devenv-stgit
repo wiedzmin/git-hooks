@@ -1,2 +1,0 @@
-devenv_patch="${DEVENV_PATCH_NAME:-devenv}"
-command -v stg &> /dev/null && stg pop $devenv_patch || exit 0
