@@ -29,4 +29,11 @@
   language: script
   name: nixfmt
   stages: [commit]
+- id: Isort
+  description: Ensure Python imports ordering with isort
+  entry: scripts/isort
+  files: "\\.py$"
+  language: script
+  name: isort
+  stages: [commit]
 # TODO: add preventing pushing FIXMEs

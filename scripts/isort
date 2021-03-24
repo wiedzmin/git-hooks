@@ -1,0 +1,11 @@
+#!/usr/bin/env bash
+
+set -e
+
+sources=$(git diff-index --cached --name-only HEAD | grep -E "\.py$")
+echo "$sources"
+for file in "$sources"; do
+  isort $file -y -rc
+done
+
+# TODO: check all tools availability
