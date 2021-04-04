@@ -29,6 +29,13 @@
   language: script
   name: nixfmt
   stages: [commit]
+- id: nixpkgs-fmt
+  description: Formatting Nix sources
+  entry: scripts/nixpkgs-fmt
+  files: "\\.nix$"
+  language: script
+  name: nixpkgs-fmt
+  stages: [commit]
 - id: Isort
   description: Ensure Python imports ordering with isort
   entry: scripts/isort

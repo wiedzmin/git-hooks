@@ -1,0 +1,9 @@
+#!/usr/bin/env bash
+
+set -e
+
+sources=$(git diff-index --cached --name-only HEAD | grep -E "\.nix$")
+echo "$sources"
+for file in "$sources"; do
+  nixpkgs-fmt $file
+done
